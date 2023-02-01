@@ -1,12 +1,12 @@
 import org.gradle.internal.os.OperatingSystem
 
 apply plugin: 'com.android.library'
-apply from: rootProject.file('gradle/WeChatPublish.gradle')
-apply from: rootProject.file('gradle/WeChatNativeDepend.gradle')
+//apply from: rootProject.file('gradle/WeChatPublish.gradle')
+//apply from: rootProject.file('gradle/WeChatNativeDepend.gradle')
 
 version rootProject.ext.VERSION_NAME
 group rootProject.ext.GROUP
-artifactId = 'app2sys'
+//artifactId = 'app2sys'
 
 android {
     compileSdkVersion 28
@@ -45,6 +45,11 @@ android {
 
     lintOptions {
         abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
 }
 
@@ -101,19 +106,19 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply plugin: 'com.jfrog.bintray'
-
-wechatPublish {
-    publishAllVariants true
-
-    publishToBintray {
-        userOrg = 'wemobiledev'
-        repo = 'maven'
-        name = 'com.tencent.mm.hardcoder:app2sys'
-        desc = ''
-        websiteUrl = 'https://github.com/Tencent/Hardcoder'
-        issueTrackerUrl = 'https://github.com/Tencent/Hardcoder/issues'
-        vcsUrl = 'https://github.com/Tencent/Hardcoder.git'
-        licenses = ['BSD 3-Clause']
-    }
-}
+//apply plugin: 'com.jfrog.bintray'
+//
+//wechatPublish {
+//    publishAllVariants true
+//
+//    publishToBintray {
+//        userOrg = 'wemobiledev'
+//        repo = 'maven'
+//        name = 'com.tencent.mm.hardcoder:app2sys'
+//        desc = ''
+//        websiteUrl = 'https://github.com/Tencent/Hardcoder'
+//        issueTrackerUrl = 'https://github.com/Tencent/Hardcoder/issues'
+//        vcsUrl = 'https://github.com/Tencent/Hardcoder.git'
+//        licenses = ['BSD 3-Clause']
+//    }
+//}
